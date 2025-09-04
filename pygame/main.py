@@ -9,6 +9,7 @@ running = True
 dt = 0
 
 player_pos = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
+player_size = 40
 
 while running:
     # poll for events
@@ -20,7 +21,7 @@ while running:
     # fill the screen with a color to wipe away anything from last frame
     screen.fill("purple")
 
-    pygame.draw.circle(screen, "red", player_pos, 40)
+    pygame.draw.circle(screen, "red", player_pos, player_size)
 
     keys = pygame.key.get_pressed()
     if keys[pygame.K_w]:
@@ -31,6 +32,11 @@ while running:
         player_pos.x -= 300 * dt
     if keys[pygame.K_d]:
         player_pos.x += 300 * dt
+
+    if player_pos.x < 0:
+        player_pos.x = screen.get_width()
+    if player_pos.x > screen.get_width():
+        player_pos.x = 0
 
     # flip() the display to put your work on screen
     pygame.display.flip()
