@@ -3,7 +3,6 @@ import openpyxl
 
 
 def certicate_from_name(name, template_path, output_path, font_size, font_color, offset_x, offset_y):
-    print(name)
     # read the certificate template
     img = cv.imread(template_path)
                             
@@ -34,10 +33,9 @@ def certicate_from_name(name, template_path, output_path, font_size, font_color,
     
     success = cv.imwrite(certi_path, img)
     print("Saved?", success, " -> ", certi_path)
-    print(name)
 
  
-def certificates_from_excel(excel_path, template_path, output_path, font_size, font_color, offset_x, offset_y):
+def certificates_from_excel(excel_path, template_path, folder_path, font_size, font_color, offset_x, offset_y):
     # loading the details.xlsx workbook 
     # and grabbing the active sheet
     obj = openpyxl.load_workbook(excel_path)
@@ -52,6 +50,9 @@ def certificates_from_excel(excel_path, template_path, output_path, font_size, f
         # cell is stored in the variable certi_name
         get_name = sheet.cell(row = i ,column = 1)
         certi_name = get_name.value
+
+        if not certi_name : 
+            continue
                                 
         # read the certificate template
         img = cv.imread(template_path)
@@ -79,7 +80,10 @@ def certificates_from_excel(excel_path, template_path, output_path, font_size, f
     
         # Output path along with the name of the
         # certificate generated
-        certi_path = output_path
+        file_name = "_".join(certi_name.split(' '))
+        certi_path = f"{folder_path}/{i}_{file_name}.png"
         
         # Save the certificate                      
-        cv.imwrite(certi_path,img)
+        success = cv.imwrite(certi_path, img)
+        print("Saved?", success, " -> ", certi_path)
+    print('Excel: done')

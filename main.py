@@ -9,7 +9,7 @@ def main():
 
     # Excel file containing names of 
     # the participants
-    excel_path = 'candidate_names.xlsx'
+    excel_path = 'candidates.xlsx'
 
     # Output Paths
     output_path = 'E:\\Code\\vacation-class\\output'
@@ -26,8 +26,9 @@ def main():
     offset_y = 15
     offset_x = 7
 
-    certicate_from_name('Hello World', template_path, output_path, font_size, font_color, offset_x, offset_y)
+    certicate_from_name('Hello World', template_path, output_name, font_size, font_color, offset_x, offset_y)
+    certificates_from_excel(excel_path, template_path, 'output', font_size, font_color, offset_x, offset_y)
 
 
-    
+main()
 
