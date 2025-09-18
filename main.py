@@ -18,6 +18,8 @@ class GraduateStudent(Student):
 
 
 s = Student("John", "Cena")  # 
-
 s.display_info()
+
+gs = GraduateStudent("Preap", "Sovath", "Music")
+gs.display_info()
 
