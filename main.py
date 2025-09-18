@@ -9,12 +9,12 @@ pygame.display.set_caption("Portal Example")
 # Colors
 WHITE = (255, 255, 255)
 RED = (200, 50, 50)
-PORTAL_COLORS = [(0, 100, 255), (255, 165, 0)]  # Blue and Orange
+PORTAL_COLORS = [(200, 100, 255), (255, 165, 100)]  # Blue and Orange
 
 # Circle (player)
 circle_pos = [100, 300]
-circle_radius = 15
-circle_speed = 5
+circle_radius = 100
+circle_speed = 20
 
 # Portals
 portals = [None, None]  # fixed size list for 2 portals
