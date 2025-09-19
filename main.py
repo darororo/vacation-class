@@ -60,7 +60,7 @@ if __name__ == "__main__":
     service = JokeService(local_repo, remote_repo)
 
     # Fetch from API and save locally
-    for i in range(5):
+    for i in range(10):
         joke = service.fetch_and_store_joke()
         print("Fetched new joke:", joke)
 
