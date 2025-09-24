@@ -8,7 +8,7 @@ python -m venv venv
 ```
 venv\Scripts\activate
 ```
-### Linux
+### Linux and Mac
 ```
 source venv/bin/activate
 ```
