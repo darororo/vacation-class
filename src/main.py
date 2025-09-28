@@ -17,6 +17,6 @@ get_certificates_from_excel(
     template="template/algo-certificate.pdf",
     font="fonts/cambria-bold.ttf",
     font_size=28,
-    name_column="Name",
+    name_column="Name",  # Label of the column which the names are in 
     offset_y=370,
 )
