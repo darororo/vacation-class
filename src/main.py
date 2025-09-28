@@ -6,7 +6,7 @@ get_certificate_by_name(
     name="JOHN F KENNEDY", 
     template="template/algo-certificate.pdf",
     font="fonts/cambria-bold.ttf",
-    font_size=28
+    font_size=28,
 )
 
 

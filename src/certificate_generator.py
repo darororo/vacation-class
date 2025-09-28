@@ -51,7 +51,6 @@ def get_certificate_by_name(name, template, font, font_size=28, font_color="#c00
 
 def get_certificates_from_excel(excel_path, template, font, font_size=28, font_color="#c00000", name_column="Name"):
     excel_path = "participants.xlsx"
-    horz = 0
     vert = 370
 
     #create the certificate directory
