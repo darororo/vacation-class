@@ -7,7 +7,7 @@ get_certificate_by_name(
     template="template/algo-certificate.pdf",
     font="fonts/cambria-bold.ttf",
     font_size=28,
-    offset_y=370,
+    offset_y=370,       # Y-Position where your name is placed from bottom
 )
 
 
