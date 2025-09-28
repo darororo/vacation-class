@@ -8,8 +8,7 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
 
-def get_certificate_by_name(name, template, font, font_size=28, font_color="#c00000"):
-    vert = 370
+def get_certificate_by_name(name, template, font, font_size=28, font_color="#c00000", offset_y=370):
     #create the certificate directory
     os.makedirs("certificates", exist_ok=True)
 
@@ -34,7 +33,7 @@ def get_certificate_by_name(name, template, font, font_size=28, font_color="#c00
     text_width = can.stringWidth(name, 'myFont', font_size)
 
     # Draw centered horizontally
-    can.drawString((width - text_width) / 2, vert, name)
+    can.drawString((width - text_width) / 2, offset_y, name)
 
     can.save()
     packet.seek(0)
@@ -49,9 +48,8 @@ def get_certificate_by_name(name, template, font, font_size=28, font_color="#c00
     outputStream.close()
     print("created " + name + ".pdf")
 
-def get_certificates_from_excel(excel_path, template, font, font_size=28, font_color="#c00000", name_column="Name"):
+def get_certificates_from_excel(excel_path, template, font, font_size=28, font_color="#c00000", name_column="Name", offset_y=370):
     excel_path = "participants.xlsx"
-    vert = 370
 
     #create the certificate directory
     os.makedirs("certificates", exist_ok=True)
@@ -84,7 +82,7 @@ def get_certificates_from_excel(excel_path, template, font, font_size=28, font_c
         text_width = can.stringWidth(name, 'myFont', font_size)
 
         # Draw centered horizontally
-        can.drawString((width - text_width) / 2, vert, name)
+        can.drawString((width - text_width) / 2, offset_y, name)
 
         can.save()
         packet.seek(0)
